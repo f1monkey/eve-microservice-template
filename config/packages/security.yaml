@@ -1,0 +1,19 @@
+security:
+    providers:
+        users:
+            id: App\Service\Security\JwtUserProvider
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        doc:
+            security: false
+            pattern: ^/v\d+/doc
+        v1_api:
+            pattern: ^/v1
+            stateless: true
+            guard:
+                authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator
+    access_control:
+        - { path: ^/v1, roles: IS_AUTHENTICATED_FULLY }

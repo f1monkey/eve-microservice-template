@@ -1,0 +1,13 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: CHANGE_ME
+            description: CHANGE_ME
+            version: v1.0
+    areas:
+        default:
+            path_patterns:
+                - ^/
+        v1:
+            path_patterns:
+                - ^/v1/
